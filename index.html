@@ -1,197 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cyber Security Portfolio | Vijaya Lakshmi S </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethical Hacker Portfolio | Your Name</title>
 
-  <!-- Bootstrap 5 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- AOS Scroll Animations -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<!-- Chart.js for Skills -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Particles.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 
-  <!-- AOS Animation Library -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
-  <style>
-    body { background-color: #0b132b; color: #fff; font-family: Arial, sans-serif; overflow-x: hidden; }
-    .navbar { background-color: #1c2541; }
-    .navbar a { color: #fff !important; }
-    a { color: #4da8da; text-decoration: none; }
-    a:hover { color: #90e0ef; }
-
-    /* Hero */
-    .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; z-index: 1; }
-    .hero h1 { font-size: 3rem; font-weight: bold; color: #0f0; text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0; animation: glow 1.5s infinite alternate; }
-    @keyframes glow { 0% { text-shadow: 0 0 5px #0f0; } 100% { text-shadow: 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0; } }
-    .hero p { color: #90e0ef; font-size: 1.2rem; }
-    .hero .btn { background-color: #4da8da; border: none; }
-    .hero .btn:hover { background-color: #90e0ef; }
-
-    /* Sections */
-    .section-title { color: #4da8da; margin-bottom: 30px; font-weight: bold; }
-    .card { background-color: #1c2541; border: none; color: #fff; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
-    .card h5 { color: #4da8da; }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 0 20px #4da8da; }
-
-    /* Footer */
-    footer { background: #1c2541; padding: 20px; text-align: center; margin-top: 40px; }
-
-    /* Skill Bars */
-    .skill { background: #1c2541; border-radius: 10px; margin-bottom: 15px; }
-    .skill-bar { height: 20px; border-radius: 10px; background: #4da8da; width: 0; transition: width 2s; }
-
-    /* Particles */
-    #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-
-    html { scroll-behavior: smooth; }
-  </style>
+<style>
+  body { margin:0; padding:0; font-family: Arial, sans-serif; background-color: #0b132b; color:#fff; overflow-x:hidden; }
+  /* Navbar */
+  .navbar { background-color:#1c2541; }
+  .navbar a { color:#fff !important; }
+  .navbar a:hover { color:#90e0ef !important; }
+  /* Hero Section */
+  .hero { position: relative; height: 100vh; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; }
+  .hero h1 { color:#0f0; font-size:3rem; text-shadow:0 0 10px #0f0,0 0 20px #0f0; animation: glow 1.5s infinite alternate; }
+  .hero p { color:#90e0ef; font-size:1.2rem; margin:10px 0; }
+  .hero .btn { background-color:#4da8da; border:none; }
+  .hero .btn:hover { background-color:#90e0ef; }
+  @keyframes glow { 0% { text-shadow:0 0 5px #0f0; } 100% { text-shadow:0 0 20px #0f0,0 0 30px #0f0; } }
+  /* Sections */
+  .section-title { color:#4da8da; margin-bottom:30px; font-weight:bold; }
+  .card { background:#1c2541; border:none; color:#fff; transition:0.3s; cursor:pointer; }
+  .card:hover { transform:translateY(-10px); box-shadow:0 0 20px #4da8da; }
+  /* Skills Charts */
+  .chart-container { width:150px; height:150px; margin:auto; }
+  /* Footer */
+  footer { background:#1c2541; text-align:center; padding:20px; margin-top:40px; }
+  /* Particles */
+  #particles-js { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
+  html { scroll-behavior:smooth; }
+</style>
 </head>
 <body>
 
-  <!-- Particles Background -->
-  <div id="particles-js"></div>
+<!-- Particles Background -->
+<div id="particles-js"></div>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">My Portfolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero" data-aos="fade-in">
-    <div class="container">
-      <h1>👨‍💻 Your Name</h1>
-      <p class="lead">Cyber Security Analyst | VAPT | ISO 27001</p>
-      <a href="#contact" class="btn btn-primary">Get in Touch</a>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-5" data-aos="fade-up">
-    <div class="container text-center">
-      <h2 class="section-title">About Me</h2>
-      <p>I am a Cyber Security Analyst with experience in vulnerability assessment, penetration testing, and ISO 27001 documentation. Passionate about strengthening defenses and solving security challenges.</p>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="py-5 bg-dark" data-aos="fade-up">
-    <div class="container text-center">
-      <h2 class="section-title">Skills</h2>
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-          <div class="skill">VAPT<div class="skill-bar" data-skill="90%"></div></div>
-          <div class="skill">Vulnerability Management<div class="skill-bar" data-skill="80%"></div></div>
-          <div class="skill">ISO 27001<div class="skill-bar" data-skill="75%"></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="py-5" data-aos="fade-up">
-    <div class="container text-center">
-      <h2 class="section-title">Projects</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card p-3" data-bs-toggle="modal" data-bs-target="#project1">
-            <h5>HackTheBox Labs</h5>
-            <p>Completed penetration testing challenges with documented writeups.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card p-3" data-bs-toggle="modal" data-bs-target="#project2">
-            <h5>Web Security Audit</h5>
-            <p>Performed vulnerability assessments on demo web apps and documented findings.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card p-3" data-bs-toggle="modal" data-bs-target="#project3">
-            <h5>Automation Scripts</h5>
-            <p>Developed Python scripts for scanning and reporting vulnerabilities.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Project Modals -->
-  <div class="modal fade" id="project1" tabindex="-1"><div class="modal-dialog"><div class="modal-content bg-dark text-white p-3"><h5>HackTheBox Labs</h5><p>Detailed writeups and screenshots of completed labs.</p></div></div></div>
-  <div class="modal fade" id="project2" tabindex="-1"><div class="modal-dialog"><div class="modal-content bg-dark text-white p-3"><h5>Web Security Audit</h5><p>Detailed reports of web vulnerability assessment.</p></div></div></div>
-  <div class="modal fade" id="project3" tabindex="-1"><div class="modal-dialog"><div class="modal-content bg-dark text-white p-3"><h5>Automation Scripts</h5><p>Python scripts for scanning and reporting vulnerabilities.</p></div></div></div>
-
-  <!-- Certifications -->
-  <section id="certifications" class="py-5 bg-dark" data-aos="fade-up">
-    <div class="container text-center">
-      <h2 class="section-title">Certifications</h2>
-      <ul class="list-unstyled">
-        <li>✅ ISO 27001 Implementation Support</li>
-        <li>✅ [Add Your Certification Here]</li>
-        <li>✅ [Add Your Certification Here]</li>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">My Portfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
-  </section>
+  </div>
+</nav>
 
-  <!-- Contact -->
-  <section id="contact" class="py-5" data-aos="fade-up">
-    <div class="container text-center">
-      <h2 class="section-title">Contact Me</h2>
-      <p>Email: <a href="mailto:yourmail@example.com">yourmail@example.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+<!-- Hero Section -->
+<section class="hero" data-aos="fade-in">
+  <div class="container">
+    <h1>👨‍💻 Your Name</h1>
+    <p>Cyber Security Analyst | Ethical Hacker | VAPT</p>
+    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="section-title">About Me</h2>
+    <p>I am a Cyber Security Analyst with hands-on experience in vulnerability assessments, penetration testing, bug bounty programs, and ISO 27001 compliance. Passionate about defending digital assets and solving complex security challenges.</p>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-5 bg-dark" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="section-title">Skills</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3">
+        <div class="chart-container">
+          <canvas id="skillVAPT"></canvas>
+          <p>VAPT</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="chart-container">
+          <canvas id="skillWebSec"></canvas>
+          <p>Web Security</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="chart-container">
+          <canvas id="skillNetwork"></canvas>
+          <p>Network Security</p>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Your Name — Cyber Security Portfolio</p>
-  </footer>
+<!-- Projects Section -->
+<section id="projects" class="py-5" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="section-title">Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3" data-bs-toggle="modal" data-bs-target="#project1">
+          <h5>HackTheBox Labs</h5>
+          <p>Completed penetration testing challenges with documented writeups.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3" data-bs-toggle="modal" data-bs-target="#project2">
+          <h5>Web Security Audit</h5>
+          <p>Performed vulnerability assessments on demo web apps and documented findings.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3" data-bs-toggle="modal" data-bs-target="#project3">
+          <h5>Automation Scripts</h5>
+          <p>Developed Python scripts for scanning and reporting vulnerabilities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- JS Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!-- Project Modals -->
+<div class="modal fade" id="project1" tabindex="-1"><div class="modal-dialog"><div class="modal-content bg-dark text-white p-3"><h5>HackTheBox Labs</h5><p>Detailed writeups and screenshots of completed labs.</p></div></div></div>
+<div class="modal fade" id="project2" tabindex="-1"><div class="modal-dialog"><div class="modal-content bg-dark text-white p-3"><h5>Web Security Audit</h5><p>Detailed reports of web vulnerability assessment.</p></div></div></div>
+<div class="modal fade" id="project3" tabindex="-1"><div class="modal-dialog"><div class="modal-content bg-dark text-white p-3"><h5>Automation Scripts</h5><p>Python scripts for scanning and reporting vulnerabilities.</p></div></div></div>
 
-  <script>
-    // Initialize Particles.js
-    particlesJS("particles-js", {
-      "particles": {
-        "number": {"value": 80},
-        "color": {"value": "#0f0"},
-        "shape": {"type": "circle"},
-        "opacity": {"value": 0.7},
-        "size": {"value": 3},
-        "line_linked": {"enable": true,"distance": 150,"color": "#0f0","opacity":0.4,"width":1},
-        "move": {"enable": true,"speed": 2}
-      }
-    });
+<!-- Certifications Section -->
+<section id="certifications" class="py-5 bg-dark" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="section-title">Certifications</h2>
+    <ul class="list-unstyled">
+      <li>✅ ISO 27001 Implementation Support</li>
+      <li>✅ CEH - Certified Ethical Hacker</li>
+      <li>✅ [Add Your Certification]</li>
+    </ul>
+  </div>
+</section>
 
-    // Initialize AOS
-    AOS.init({ duration: 1000, once: true });
+<!-- Contact Section -->
+<section id="contact" class="py-5" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="section-title">Contact Me</h2>
+    <p>Email: <a href="mailto:yourmail@example.com">yourmail@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+  </div>
+</section>
 
-    // Animate Skill Bars
-    const skillBars = document.querySelectorAll('.skill-bar');
-    window.addEventListener('scroll', () => {
-      const triggerBottom = window.innerHeight;
-      skillBars.forEach(bar => {
-        const barTop = bar.getBoundingClientRect().top;
-        if(barTop < triggerBottom) {
-          bar.style.width = bar.getAttribute('data-skill');
-        }
-      });
-    });
-  </script>
+<!-- Footer -->
+<footer>
+  <p>© 2025 Your Name — Ethical Hacker Portfolio</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // Initialize AOS
+  AOS.init({ duration:1000, once:true });
+
+  // Initialize Particles.js
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {"value":80},
+      "color":{"value":"#0f0"},
+      "shape":{"type":"circle"},
+      "opacity":{"value":0.7},
+      "size":{"value":3},
+      "line_linked":{"enable":true,"distance":150,"color":"#0f0","opacity":0.4,"width":1},
+      "move":{"enable":true,"speed":2}
+    }
+  });
+
+  // Chart.js Skills
+  const skillOptions = { type:'doughnut', options:{cutout:'70%', plugins:{legend:{display:false}}}};
+  const skillVAPT = new Chart(document.getElementById('skillVAPT'), {...skillOptions,data:{labels:['',''],datasets:[{data:[90,10],backgroundColor:['#4da8da','#1c2541']}]}})
+  const skillWebSec = new Chart(document.getElementById('skillWebSec'), {...skillOptions,data:{labels:['',''],datasets:[{data:[85,15],backgroundColor:['#4da8da','#1c2541']}]}})
+  const skillNetwork = new Chart(document.getElementById('skillNetwork'), {...skillOptions,data:{labels:['',''],datasets:[{data:[80,20],backgroundColor:['#4da8da','#1c2541']}]}})
+</script>
 </body>
 </html>
