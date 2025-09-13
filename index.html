@@ -9,50 +9,53 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- AOS for Scroll Animations -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-<!-- Chart.js for Skills -->
+<!-- Chart.js for Skills (optional fallback) -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- Particles.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 
 <style>
-body { margin:0; padding:0; font-family: Arial, sans-serif; background:#0b132b; color:#fff; overflow-x:hidden; }
-/* Navbar */
+body{margin:0;padding:0;font-family:Arial, sans-serif;background:#0b132b;color:#fff;overflow-x:hidden;}
 .navbar{background:#1c2541;}
 .navbar a{color:#fff !important;}
 .navbar a:hover{color:#4da8da !important;}
+
 /* Hero Section */
 .hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.hero h1{color:#0f0;font-size:3rem;text-shadow:0 0 10px #0f0,0 0 20px #0f0; animation:glow 1.5s infinite alternate;}
+.hero h1{color:#0f0;font-size:3rem;text-shadow:0 0 10px #0f0,0 0 20px #0f0;animation:glow 1.5s infinite alternate;}
 .hero p{color:#90e0ef;font-size:1.2rem;margin:10px 0;}
 .hero .btn{background-color:#4da8da;border:none;}
 .hero .btn:hover{background-color:#90e0ef;}
 @keyframes glow{0%{text-shadow:0 0 5px #0f0;}100%{text-shadow:0 0 20px #0f0,0 0 30px #0f0;}}
 
 /* Typewriter text */
-.typewriter > .text { border-right: 2px solid #0f0; white-space: nowrap; overflow: hidden; display:inline-block; font-weight:bold; font-size:1.5rem; animation:typing 3s steps(30, end) infinite alternate; }
-@keyframes typing { 0% { width:0; } 100% { width:100%; } }
+.typewriter > .text { border-right: 2px solid #0f0; white-space: nowrap; overflow: hidden; display:inline-block; font-weight:bold; font-size:1.5rem; animation:typing 3s steps(30,end) infinite alternate;}
+@keyframes typing{0%{width:0;}100%{width:100%;}}
 
 /* Sections */
 .section-title{color:#4da8da;margin-bottom:30px;font-weight:bold;}
-.card{background:#1c2541;border:none;color:#fff;transition:0.5s;cursor:pointer; perspective:1000px;}
+.card{background:#1c2541;border:none;color:#fff;transition:0.5s;cursor:pointer;perspective:1000px;}
 .card-inner{position:relative;width:100%;height:100%;transition:transform 0.8s;transform-style:preserve-3d;}
 .card:hover .card-inner{transform:rotateY(180deg);}
-.card-front, .card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:10px;padding:15px;}
-.card-back{transform:rotateY(180deg);background:#0f0;color:#000; display:flex; align-items:center; justify-content:center; text-align:center; font-weight:bold; font-size:1rem;}
+.card-front,.card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:10px;padding:15px;}
+.card-back{transform:rotateY(180deg);background:#0f0;color:#000;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:bold;font-size:1rem;}
 .card-front h5{color:#4da8da;}
-.chart-container{width:150px;height:150px;margin:auto; position:relative;}
-footer{background:#1c2541;text-align:center;padding:20px;margin-top:40px;}
 
-/* Particles and Matrix */
-#particles-js, #matrixCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;}
+/* Skills Section */
+.skill-container{position:relative;display:inline-block;}
+.skill-tooltip{opacity:0;pointer-events:none;transition:all 0.3s ease-in-out;}
+.skill-container:hover .skill-tooltip{opacity:1;transform:translate(-50%,-50%) scale(1.2);}
 
-/* Hero Video fallback */
-video#heroVideo{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-3;}
-
-/* Certificates hover effect */
+/* Certificates */
 .cert-badge{display:inline-block;margin:10px;padding:10px 20px;border:2px solid #4da8da;border-radius:10px;transition:0.3s;}
 .cert-badge:hover{transform:scale(1.1);box-shadow:0 0 15px #4da8da;}
 
+/* Footer */
+footer{background:#1c2541;text-align:center;padding:20px;margin-top:40px;}
+
+/* Particles & Matrix */
+#particles-js,#matrixCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;}
+video#heroVideo{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-3;}
 html{scroll-behavior:smooth;}
 </style>
 </head>
@@ -109,16 +112,41 @@ html{scroll-behavior:smooth;}
 <section id="skills" class="py-5 bg-dark" data-aos="fade-up">
   <div class="container text-center">
     <h2 class="section-title">Skills</h2>
-    <div class="row g-4 justify-content-center">
+    <div class="row g-5 justify-content-center">
+
+      <!-- VAPT Skill -->
       <div class="col-md-3">
-        <div class="chart-container"><canvas id="skillVAPT"></canvas><p>VAPT</p></div>
+        <div class="skill-container">
+          <canvas id="skillVAPTCanvas" width="150" height="150"></canvas>
+          <div class="skill-tooltip" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#0f0;font-size:12px;text-align:center;">
+            VAPT<br>Nmap, Burp Suite, Metasploit
+          </div>
+          <p class="mt-3" style="color:#4da8da;font-weight:bold;">VAPT</p>
+        </div>
       </div>
+
+      <!-- Web Security Skill -->
       <div class="col-md-3">
-        <div class="chart-container"><canvas id="skillWebSec"></canvas><p>Web Security</p></div>
+        <div class="skill-container">
+          <canvas id="skillWebSecCanvas" width="150" height="150"></canvas>
+          <div class="skill-tooltip" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#0f0;font-size:12px;text-align:center;">
+            Web Security<br>OWASP Top 10, Pen Testing
+          </div>
+          <p class="mt-3" style="color:#4da8da;font-weight:bold;">Web Security</p>
+        </div>
       </div>
+
+      <!-- Network Security Skill -->
       <div class="col-md-3">
-        <div class="chart-container"><canvas id="skillNetwork"></canvas><p>Network Security</p></div>
+        <div class="skill-container">
+          <canvas id="skillNetworkCanvas" width="150" height="150"></canvas>
+          <div class="skill-tooltip" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#0f0;font-size:12px;text-align:center;">
+            Network Security<br>Wireshark, Firewalls, IDS/IPS
+          </div>
+          <p class="mt-3" style="color:#4da8da;font-weight:bold;">Network Security</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -201,12 +229,11 @@ html{scroll-behavior:smooth;}
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
 <script>
-// AOS Init
+// Initialize scroll animations
 AOS.init({ duration:1000, once:true });
 
-// Particles
+// Particles.js
 particlesJS("particles-js", {
   "particles": { "number": {"value":80}, "color":{"value":"#0f0"}, "shape":{"type":"circle"}, "opacity":{"value":0.7}, "size":{"value":3}, "line_linked":{"enable":true,"distance":150,"color":"#0f0","opacity":0.4,"width":1}, "move":{"enable":true,"speed":2} }
 });
@@ -226,20 +253,6 @@ function drawMatrix() {
   ctx.fillStyle = "#0f0";
   ctx.font = fontSize + "px monospace";
   for(let i=0;i<drops.length;i++){
-    const text = letters.charAt(Math.floor(Math.random()*letters.length));
-    ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-    if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
-    drops[i]++;
-  }
-}
-setInterval(drawMatrix,33);
+    const text = letters.char
 
-// Skills Chart
-const skillOptions = { type:'doughnut', options:{cutout:'70%', plugins:{legend:{display:false}}}};
-new Chart(document.getElementById('skillVAPT'), {...skillOptions,data:{labels:['',''],datasets:[{data:[90,10],backgroundColor:['#4da8da','#1c2541']}]}})
-new Chart(document.getElementById('skillWebSec'), {...skillOptions,data:{labels:['',''],datasets:[{data:[85,15],backgroundColor:['#4da8da','#1c2541']}]}})
-new Chart(document.getElementById('skillNetwork'), {...skillOptions,data:{labels:['',''],datasets:[{data:[80,20],backgroundColor:['#4da8da','#1c2541']}]}})
-</script>
-
-</body>
-</html>
+  
